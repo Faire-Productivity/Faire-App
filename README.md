@@ -2,7 +2,7 @@
 
 <!--- These are examples. See https://shields.io for others or to customize this set of shields. You might want to include dependencies, project status and licence info here --->
 
-![Faire](https://github.com/Faire-Productivity/Faire-App/web/icons/Icon-192.png)
+![Faire](https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png)
 [Version](https://img.shields.io/github/v/release/Faire-Productivity/Faire-App?color=ff1aba&include_prereleases&label=Version&style=for-the-badge)
 <!-- ![GitHub repo size](https://img.shields.io/github/repo-size/scottydocs/README-template.md)
 ![GitHub contributors](https://img.shields.io/github/contributors/scottydocs/README-template.md)
