@@ -1,6 +1,7 @@
 # Faire
 
-![Faire](https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png)
+![Faire](https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png)  
+\
 ![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Faire-Productivity/Faire-App?include_prereleases&label=Version&style=for-the-badge)
 
 Faire, a new way to be productive.
