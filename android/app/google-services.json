@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "930769309061",
+    "firebase_url": "https://faire-productivity.firebaseio.com",
+    "project_id": "faire-productivity",
+    "storage_bucket": "faire-productivity.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:930769309061:android:b4de61bab7ee89ae7408ec",
+        "android_client_info": {
+          "package_name": "com.megalosansyagami.faire"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "930769309061-7fe472p9f8argi0dr6cjn850d4dobcu0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.megalosansyagami.faire",
+            "certificate_hash": "b08d02e63d99c91c80f9368b26104a08a459188d"
+          }
+        },
+        {
+          "client_id": "930769309061-c6otig5heoobr8vrrvohtsujn54b9emk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAGPrw9Gu0vq4EzOAnrLfR8SbGDm9oS7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "930769309061-c6otig5heoobr8vrrvohtsujn54b9emk.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
