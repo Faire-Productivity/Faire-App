@@ -25,7 +25,7 @@ Alternatively see the GitHub documentation on [creating a pull request](https://
 
 ## Contact
 
-If you want to contact me you can reach me at <megalosansyagami@gmail.com> or [via Twitter](https://twitter.com/MegaloSansYagami)).
+If you want to contact me you can reach me at <megalosansyagami@gmail.com> or [via Twitter](https://twitter.com/MegaloSansYagami).
 
 ## License
 
