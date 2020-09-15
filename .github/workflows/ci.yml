@@ -9,7 +9,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     container: 
       image: google/dart:latest
     steps:
@@ -23,8 +23,8 @@ jobs:
     - run: flutter channel master 
     - run: flutter upgrade
     - run: flutter doctor -v
-    - run: flutter config --enable-windows-desktop
+    - run: flutter config --enable-web
     - run: flutter pub get
     - run: flutter test
     - run: flutter build apk
-    - run: flutter build windows
+    - run: flutter build web
