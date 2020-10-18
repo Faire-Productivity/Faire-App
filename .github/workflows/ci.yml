@@ -24,5 +24,6 @@ jobs:
     - run: flutter config --enable-web
     - run: flutter pub get
     - run: flutter build apk --debug
+    - run: flutter build apk --profile
     - run: flutter build apk --release
     - run: flutter build web
