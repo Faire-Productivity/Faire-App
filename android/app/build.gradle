@@ -34,6 +34,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 30
+    ndkVersion "21.3.6528147"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -50,8 +51,8 @@ android {
         targetSdkVersion 30
 //        versionCode flutterVersionCode.toInteger()
 //        versionName flutterVersionName
-        versionCode 1612010
-        versionName "0.1.0-15092020rc1"
+        versionCode 1612011
+        versionName "0.1.1-09102020"
         multiDexEnabled true
     }
 

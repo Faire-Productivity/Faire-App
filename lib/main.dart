@@ -19,6 +19,9 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: GoogleFonts.montserrat().fontFamily,
           primarySwatch: Colors.pink,
+          // to be impemented on 0.1.2
+          // primaryColor: Color(0xfff50057),
+          // accentColor: Color(0xffffbc0a),
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: Homepage(),

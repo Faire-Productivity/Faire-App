@@ -39,7 +39,7 @@ class TaskCategoryView extends StatelessWidget {
                   title: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(value.categories[index].name),
+                      Flexible(child: Text(value.categories[index].name)),
                       Text(value.categories[index].tasks.where((t) => t.complete).length.toString() + " / " + value.categories[index].tasks.length.toString()),
                     ],
                     ),

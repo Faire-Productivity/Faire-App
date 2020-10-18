@@ -43,13 +43,15 @@ class TaskList extends StatelessWidget {
                             title: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
-                                Text(
-                                  taskItem.tasks[index].title,
-                                  style: TextStyle(
-                                    // fontWeight: FontWeight.bold,
-                                    decoration: taskItem.tasks[index].complete
-                                        ? TextDecoration.lineThrough
-                                        : null,
+                                Flexible(
+                                  child: Text(
+                                    taskItem.tasks[index].title,
+                                    style: TextStyle(
+                                      // fontWeight: FontWeight.bold,
+                                      decoration: taskItem.tasks[index].complete
+                                          ? TextDecoration.lineThrough
+                                          : null,
+                                    ),
                                   ),
                                 ),
                                 IconButton(

@@ -1,5 +1,7 @@
+import 'package:Faire/pages/settings.dart';
 import 'package:Faire/pages/task_categories.dart';
 import 'package:Faire/pages/task_list.dart';
+import 'package:Faire/services/popup_constants.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:Faire/providers/task.dart';
@@ -14,7 +16,6 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   bool _init = false;
   bool _err = false;
-  bool isLoading = false;
 
   void initFirebase() async {
     try {
@@ -54,7 +55,21 @@ class _HomepageState extends State<Homepage> {
     }
     return Scaffold(
       appBar: AppBar(
-        title: Text("Faire" + context.select<TaskProvider, String>((s) =>s.currentCategoryIndex != -1 ? " - " + s.categories[s.currentCategoryIndex].name.toString() : " - Add a Category")),
+        title:
+        Text(context.select<TaskProvider, String>((s) =>s.currentCategoryIndex != -1 ? s.categories[s.currentCategoryIndex].name.toString() : "Faire")),
+        actions: [
+          PopupMenuButton<String>(
+            onSelected: choicesAction,
+            itemBuilder: (BuildContext context) {
+              return PopUpConstants.popupChoices.map((String popupChoice){
+                return PopupMenuItem<String>(
+                  value: popupChoice,
+                  child: Text(popupChoice),
+                );
+              }).toList();
+            },
+          )
+        ],
       ),
       drawer: Drawer(
         child: TaskCategoryView(),
@@ -67,5 +82,12 @@ class _HomepageState extends State<Homepage> {
         ],
       ),
     );
+  }
+  void choicesAction(String popupChoice) {
+    if (popupChoice == PopUpConstants.Settings) {
+      Navigator.push(context, MaterialPageRoute(
+        builder: (context) => SettingsPage()
+      ));
+    }
   }
 }
