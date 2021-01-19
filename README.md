@@ -1,8 +1,10 @@
 # Faire
-
-![Faire](https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png)  
+[![Faire logo][]][faire-productivity.web.app]
 \
-![GitHub release (latest by date including pre-releases)](https://img.shields.io/github/v/release/Faire-Productivity/Faire-App?include_prereleases&label=Version&style=for-the-badge)
+\
+[![Faire Releases Badge][]][Faire Releases]
+\
+[![Faire master Build status badge][]][Faire master Build status]
 
 Faire, a new way to be productive.
 
@@ -30,6 +32,13 @@ If you want to contact me you can reach me at <megalosansyagami@gmail.com> or [v
 ## License
 
 This project uses the following license: [GPL-3.0 License](https://github.com/Faire-Productivity/Faire-App/blob/master/LICENSE).
+
+[Faire logo]: https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png  
+[faire-productivity.web.app]: https://faire-productivity.web.app
+[Faire Releases Badge]: https://img.shields.io/github/v/release/Faire-Productivity/Faire-App?include_prereleases&label=Version&style=for-the-badge
+[Faire Releases]: https://github.com/Faire-Productivity/Faire-App/releases
+[Faire master Build status]: https://github.com/Faire-Productivity/Faire-App/actions
+[Faire master Build status badge]: https://img.shields.io/github/checks-status/Faire-Productivity/Faire-App/master?label=master&style=for-the-badge
 
 <!-- ## Getting Started
 
