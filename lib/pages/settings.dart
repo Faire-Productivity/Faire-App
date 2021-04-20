@@ -1,4 +1,6 @@
+import 'package:Faire/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SettingsPage extends StatefulWidget {
@@ -7,9 +9,9 @@ class SettingsPage extends StatefulWidget {
 }
 
 class _SettingsPageState extends State<SettingsPage> {
+
   final Uri _faireGitHubUri = Uri.https('github.com', '/Faire-Productivity/Faire-App/issues');
-  bool _lyticsEnabled = false;
-  bool _darkModeEnabled = false;
+  bool _lyticsEnabled = true;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +35,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 onChanged: (bool value) {
                   setState(() {
                     _lyticsEnabled = !_lyticsEnabled;
+                    showInDevelopmentDialog();
                   });
                 },
               ),
@@ -45,15 +48,19 @@ class _SettingsPageState extends State<SettingsPage> {
           ListView(
             shrinkWrap: true,
             children: [
-              SwitchListTile(
-                title: Text("Dark Mode", style: TextStyle(fontWeight: FontWeight.bold),),
-                secondary: Icon(Icons.nights_stay),
-                value: _darkModeEnabled,
-                onChanged: (bool value) {
-                  setState(() {
-                    _darkModeEnabled = !_darkModeEnabled;
-                  });
-                },
+              Consumer<ThemeNotifier>(
+                builder:(context, notifier, child) =>
+                SwitchListTile(
+                  title: Text("Dark Mode", style: TextStyle(fontWeight: FontWeight.bold),),
+                  secondary: Icon(Icons.nights_stay),
+                  value: notifier.darkMode,
+                  onChanged: (bool value) {
+                    setState(() {
+                      notifier.toggleTheme();
+                      showInDevelopmentDialog();
+                    });
+                  },
+                ),
               ),
             ],
           ),
@@ -85,6 +92,7 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 
+
   showAbout() {
     showAboutDialog(
       context: context,
@@ -94,6 +102,20 @@ class _SettingsPageState extends State<SettingsPage> {
       children: [
         Text("Faire, a new way to be productive.")
       ]
+    );
+  }
+
+  showInDevelopmentDialog() {
+    showDialog(
+        context: context,
+      builder: (context) => AlertDialog(
+        title: Text("Feature in Development"),
+        content: Text("This feature may not work as intended to be. "
+            "After all, we're at the Beta phase, so stability is not guaranteed!"),
+        actions: [
+          ElevatedButton(onPressed: () {Navigator.pop(context);}, child: Text("OK"))
+        ],
+      )
     );
   }
 }
