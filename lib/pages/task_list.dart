@@ -1,6 +1,6 @@
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
-import 'package:Faire/providers/task.dart';
+import 'package:faire/providers/task.dart';
 
 class TaskList extends StatelessWidget {
   @override
@@ -96,12 +96,12 @@ class TaskList extends StatelessWidget {
                     decoration: InputDecoration(
                         hintText: "e.g. 'Finish this damn app'")),
                 actions: [
-                  FlatButton(
+                  TextButton(
                       onPressed: () {
                         Navigator.pop(context);
                       },
                       child: Text("Cancel")),
-                  FlatButton(
+                  TextButton(
                       onPressed: () {
                         if (_formKey.currentState.validate()) {
                           _formKey.currentState.save();

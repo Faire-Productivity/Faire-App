@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:Faire/services/firestore.dart';
+import 'package:faire/services/firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/foundation.dart';
 

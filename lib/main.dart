@@ -1,7 +1,7 @@
-import 'package:Faire/pages/home.dart';
-import 'package:Faire/providers/task.dart';
+import 'package:faire/pages/home.dart';
+import 'package:faire/providers/task.dart';
+import 'package:faire/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -14,17 +14,17 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return ChangeNotifierProvider<TaskProvider>(
       create: (context) => TaskProvider(),
-          child: MaterialApp(
-        title: 'Faire',
-        theme: ThemeData(
-          fontFamily: GoogleFonts.montserrat().fontFamily,
-          primarySwatch: Colors.pink,
-          // to be impemented on 0.1.2
-          // primaryColor: Color(0xfff50057),
-          // accentColor: Color(0xffffbc0a),
-          visualDensity: VisualDensity.adaptivePlatformDensity,
+      child: ChangeNotifierProvider<ThemeNotifier>(
+        create: (context) => ThemeNotifier(),
+        child: Consumer<ThemeNotifier>(
+          builder: (context, ThemeNotifier notifier, child) {
+            return MaterialApp(
+              title: 'Faire',
+              theme: notifier.darkMode ? darkMode : brightMode,
+              home: Homepage(),
+            );
+          },
         ),
-        home: Homepage(),
       ),
     );
   }

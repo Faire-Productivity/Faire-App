@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Faire/providers/task.dart';
+import 'package:faire/providers/task.dart';
 import 'package:provider/provider.dart';
 
 showAddCategory(context, {edit = false}) {
@@ -30,7 +30,7 @@ showAddCategory(context, {edit = false}) {
                   decoration:
                       InputDecoration(hintText: "e.g. 'Work', 'Personal'")),
               actions: [
-                FlatButton(
+                TextButton(
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -41,12 +41,9 @@ showAddCategory(context, {edit = false}) {
                       ),
                     )),
                 if (edit)
-                FlatButton(
+                TextButton(
                         onPressed: () {
-                          var read = context.read<TaskProvider>();
-                          var catId = read.categories[read.currentCategoryIndex].id;
-                          read.removeCategory(catId);
-                          Navigator.pop(context);
+                          showDeleteDialog(context, task: false);
                         },
                         child: Text(
                           "Delete",
@@ -54,7 +51,7 @@ showAddCategory(context, {edit = false}) {
                             color: Colors.red,
                           ),
                         )),
-                FlatButton(
+                TextButton(
                     onPressed: () {
                       if (_formKey.currentState.validate()) {
                         _formKey.currentState.save();
@@ -62,7 +59,8 @@ showAddCategory(context, {edit = false}) {
                           context.read<TaskProvider>().addCategory(Category(
                               id: UniqueKey().toString(),
                               name: inputText,
-                              tasks: []));
+                              tasks: [])
+                          );
                         } else {
                           var read = context.read<TaskProvider>();
                           var catId = read.categories[read.currentCategoryIndex].id;
@@ -76,4 +74,43 @@ showAddCategory(context, {edit = false}) {
             ),
           );
       });
+}
+
+showDeleteDialog(context, {task = false}) {
+  task ? print("task is positive, skipping Navigator.pop().") : Navigator.pop(context);
+  showDialog(
+    context: context,
+    builder: (context) {
+      var name = context.select<TaskProvider, String>((s) =>s.currentCategoryIndex != -1 ? s.categories[s.currentCategoryIndex].name : null);
+      return AlertDialog(
+        content: Text(task ? "Are you sure you want to delete this task?" : "Are you sure you want to delete \"$name?\""),
+        actions: [
+          TextButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              child: Text(
+                "Cancel",
+                style: TextStyle(
+                  color: Colors.grey,
+                ),
+              )),
+          TextButton(
+            onPressed: () {
+              var read = context.read<TaskProvider>();
+              var catId = read.categories[read.currentCategoryIndex].id;
+              read.removeCategory(catId);
+              Navigator.pop(context);
+            },
+            child: Text(
+              "Delete",
+              style: TextStyle(
+                color: Colors.red,
+              ),
+            ),
+          )
+        ],
+      );
+    }
+  );
 }
