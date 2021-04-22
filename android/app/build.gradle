@@ -34,7 +34,7 @@ apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
     compileSdkVersion 30
-        ndkVersion "22.1.7171670"
+    ndkVersion "22.1.7171670"
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
@@ -49,10 +49,8 @@ android {
         applicationId "com.megalosansyagami.faire"
         minSdkVersion 16
         targetSdkVersion 30
-//        versionCode flutterVersionCode.toInteger()
-//        versionName flutterVersionName
-        versionCode 1612011
-        versionName "0.1.1-09102020"
+        versionCode flutterVersionCode.toInteger()
+        versionName flutterVersionName
         multiDexEnabled true
     }
 

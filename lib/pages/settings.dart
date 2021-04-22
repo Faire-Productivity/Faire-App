@@ -1,4 +1,4 @@
-import 'package:Faire/providers/theme_provider.dart';
+import 'package:faire/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -97,7 +97,7 @@ class _SettingsPageState extends State<SettingsPage> {
     showAboutDialog(
       context: context,
       applicationName: "Faire",
-      applicationVersion: "0.1.2",
+      applicationVersion: "0.1.2-android",
       applicationIcon: Image.asset("assets/faire_favicon.png",height: 50,),
       children: [
         Text("Faire, a new way to be productive.")

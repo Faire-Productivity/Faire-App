@@ -44,7 +44,7 @@ class ThemeNotifier extends ChangeNotifier {
   bool _darkMode;
   bool get darkMode => _darkMode;
   ThemeNotifier() {
-    _darkMode = true;
+    _darkMode = false;
     _loadFromPrefs();
   }
   toggleTheme(){

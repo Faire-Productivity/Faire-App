@@ -1,11 +1,10 @@
-import 'package:Faire/pages/settings.dart';
-import 'package:Faire/pages/task_list.dart';
-import 'package:Faire/providers/theme_provider.dart';
-import 'package:Faire/services/popup_constants.dart';
-import 'package:Faire/utils/dialogs.dart';
+import 'package:faire/pages/settings.dart';
+import 'package:faire/pages/task_list.dart';
+import 'package:faire/providers/theme_provider.dart';
+import 'package:faire/utils/dialogs.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
-import 'package:Faire/providers/task.dart';
+import 'package:faire/providers/task.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -107,7 +106,7 @@ class _HomepageState extends State<Homepage> {
                       child: ListTile(
                         contentPadding: EdgeInsets.zero,
                         title: Text(
-                            "Categories (" + context.watch<TaskProvider>().categories.length.toString() + ")",
+                            "Categories (" + context.read<TaskProvider>().categories.length.toString() + ")",
                           style: TextStyle(
                             color: Colors.white,
                             fontFamily: GoogleFonts.montserrat().fontFamily
@@ -189,4 +188,12 @@ class _HomepageState extends State<Homepage> {
     _prefs.getBool(ThemeNotifier().key);
     print(_prefs.getBool(ThemeNotifier().key).toString() + " <= current bool");
   }
+}
+
+class PopUpConstants {
+  static const String Settings = "Settings";
+
+  static const List<String> popupChoices = <String>[
+    Settings
+  ];
 }

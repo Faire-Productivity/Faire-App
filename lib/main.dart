@@ -1,6 +1,6 @@
-import 'package:Faire/pages/home.dart';
-import 'package:Faire/providers/task.dart';
-import 'package:Faire/providers/theme_provider.dart';
+import 'package:faire/pages/home.dart';
+import 'package:faire/providers/task.dart';
+import 'package:faire/providers/theme_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 

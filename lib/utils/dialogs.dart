@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:Faire/providers/task.dart';
+import 'package:faire/providers/task.dart';
 import 'package:provider/provider.dart';
 
 showAddCategory(context, {edit = false}) {
@@ -44,7 +44,6 @@ showAddCategory(context, {edit = false}) {
                 TextButton(
                         onPressed: () {
                           showDeleteDialog(context, task: false);
-
                         },
                         child: Text(
                           "Delete",
@@ -60,7 +59,8 @@ showAddCategory(context, {edit = false}) {
                           context.read<TaskProvider>().addCategory(Category(
                               id: UniqueKey().toString(),
                               name: inputText,
-                              tasks: []));
+                              tasks: [])
+                          );
                         } else {
                           var read = context.read<TaskProvider>();
                           var catId = read.categories[read.currentCategoryIndex].id;
@@ -113,5 +113,4 @@ showDeleteDialog(context, {task = false}) {
       );
     }
   );
-
 }

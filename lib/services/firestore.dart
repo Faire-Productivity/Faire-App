@@ -1,6 +1,6 @@
 //Firestore™
 
-import 'package:Faire/providers/task.dart';
+import 'package:faire/providers/task.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Firestore {
