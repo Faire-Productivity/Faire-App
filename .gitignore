@@ -45,3 +45,4 @@ app.*.map.json
 
 # Firebase API
 /android/app/google-services.json
+/gradle.properties
