@@ -8,7 +8,7 @@
 
 Faire, a new way to be productive.
 
-The official source code of Faire's app.  
+The official source code of Faire's app.
 
 ## Prerequisites
 
@@ -33,7 +33,7 @@ If you want to contact me you can reach me at <megalosansyagami@gmail.com> or [v
 
 This project uses the following license: [GPL-3.0 License](https://github.com/Faire-Productivity/Faire-App/blob/master/LICENSE).
 
-[Faire logo]: https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png  
+[Faire logo]: https://raw.githubusercontent.com/Faire-Productivity/Faire-App/master/web/icons/Icon-192.png
 [faire-productivity.web.app]: https://faire-productivity.web.app
 [Faire Releases Badge]: https://img.shields.io/github/v/release/Faire-Productivity/Faire-App?include_prereleases&label=Version&style=for-the-badge
 [Faire Releases]: https://github.com/Faire-Productivity/Faire-App/releases
