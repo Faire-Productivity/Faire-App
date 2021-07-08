@@ -1,0 +1,28 @@
+name: iOS IPA gen test
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: 	macos-11
+    steps:
+    - uses: actions/checkout@v1
+    - uses: subosito/flutter-action@v1
+      with:
+        channel: 'dev'
+    - run: flutter upgrade
+    - run: flutter doctor -v
+    - run: flutter pub get
+    - run: flutter build ipa --debug
+    - run: flutter build ipa --profile
+    - run: flutter build ipa --release
+#     - name: Push IPA to Releases
+#       uses: ncipollo/release-action@v1
+#       with:
+#         artifacts: "build/app/outputs/apk/debug/*.apk"
+#         token: ${{ secrets.GH_TOKEN }}
