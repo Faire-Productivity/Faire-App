@@ -18,9 +18,9 @@ jobs:
     - run: flutter upgrade
     - run: flutter doctor -v
     - run: flutter pub get
-    - run: flutter build ipa --debug --no-codesign
-    - run: flutter build ipa --profile --no-codesign
-    - run: flutter build ipa --release --no-codesign
+    - run: flutter build ios --debug --no-codesign
+    - run: flutter build ios --profile --no-codesign
+    - run: flutter build ios --release --no-codesign
 #     - name: Push IPA to Releases
 #       uses: ncipollo/release-action@v1
 #       with:
